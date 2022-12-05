@@ -14,7 +14,8 @@ if (!process.env.FAUNADB_SERVER_SECRET) {
 console.log(chalk.cyan("Creating your FaunaDB Database...\n"));
 if (insideNetlify) {
   // Run idempotent database creation
-  console.log(`Creating database with ${process.env.FAUNADB_SERVER_SECRET}`);
+  let foo = process.env.FAUNADB_SERVER_SECRET;
+  console.log(`Creating database with ${foo}`);
   createFaunaDB(process.env.FAUNADB_SERVER_SECRET).then(() => {
     console.log("Database created");
   });
